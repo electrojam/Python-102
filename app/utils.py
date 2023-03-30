@@ -13,9 +13,12 @@ def get_population(country_dict):
   values = population_dict.values()
   return labels, values
   
-
 def population_by_country(data, country):
   result = list(filter(lambda item: item['Country'] == country, data))
   return result
   
-  
+def population_world(data):
+  percentage_dict = {item['Country']:item['World Population Percentage'] for item in data}
+  country = percentage_dict.keys()
+  percentage = percentage_dict.values()
+  return country, percentage
