@@ -4,9 +4,12 @@ import charts
 
 def run():
   data = read_csv.read_csv('./app/data.csv')
-  
+  ''' #Alternativa llamando función population_world
   country, percentage = utils.population_world(data)
-  charts.generate_pie_chart(country, percentage)
+  '''
+  countries = list(map(lambda x: x['Country'], data))
+  percentages = list(map(lambda x: x['World Population Percentage'], data))
+  charts.generate_pie_chart(countries, percentages)
   #print(list(zip(country, percentage)))
       
 '''

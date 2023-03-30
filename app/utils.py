@@ -16,9 +16,10 @@ def get_population(country_dict):
 def population_by_country(data, country):
   result = list(filter(lambda item: item['Country'] == country, data))
   return result
-  
+'''  #Alternativa porcentajes población mundial con función
 def population_world(data):
   percentage_dict = {item['Country']:item['World Population Percentage'] for item in data}
   country = percentage_dict.keys()
   percentage = percentage_dict.values()
   return country, percentage
+'''  
